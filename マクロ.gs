@@ -5,20 +5,6 @@
  * スクリプトエディタから実行しても動作しない
  * */
 function cellValueChanged() {
-/*
-  var spreadsheet = SpreadsheetApp.getActive();
-  spreadsheet.getSheetByName("todo").activate();
-  var activatedCell = spreadsheet.getActiveCell();
-
-  // alter color by status
-  var activeColumnIndex = activatedCell.getColumn();
-  console.info("active column index: " + activeColumnIndex.toString());
-
-  if (activeColumnIndex == 7) {
-    var rowIndex = spreadsheet.getCurrentCell().getRowIndex();
-    setRowBackgroundByStatus(rowIndex);
-  }
-*/
   var spreadsheet = SpreadsheetApp.getActive();
   var todoSheet = spreadsheet.getSheetByName("todo");
   var activatedCell = todoSheet.getActiveCell();
@@ -32,7 +18,6 @@ function cellValueChanged() {
     console.info("current row index: " + rowIndex.toString());
     setRowBackgroundByStatus(rowIndex);
   }
-
 }
 
 /** 行の背景色を変更する。色はステータスで決定する。 */
@@ -47,18 +32,12 @@ function setRowBackgroundByStatus(rowIndex) {
   var statusColumnIndex = spreadsheet.getRangeByName("status").getColumn();
   console.info("column index at status: " + statusColumnIndex.toString());
 
-  // 選択セルを保存
-  //var selectedCell = spreadsheet.getCurrentCell();
-
   console.info("target　row index: " + rowIndex.toString());
   spreadsheet.getRange('A' + rowIndex.toString() + ':R' + rowIndex.toString()).activate();
 
   var hexColor = getHexColor(activeSheet.getRange(rowIndex, statusColumnIndex).getValue());
   console.log("targetColor:" + hexColor);
   spreadsheet.getActiveRangeList().setBackground(hexColor);
-
-  // 元に戻す
-  //selectedCell.activate();
 };
 
 /** ステータスごとの色を取得する */
