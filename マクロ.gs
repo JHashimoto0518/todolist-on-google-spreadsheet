@@ -12,8 +12,11 @@ function cellValueChanged() {
   // alter color by status
   var activeColumnIndex = activatedCell.getColumn();
   console.info("active column index: " + activeColumnIndex.toString());
-  
-  if (activeColumnIndex == 7) {
+
+  var statusColumnIndex = spreadsheet.getRangeByName("status").getColumn();
+  console.info("column index at status: " + statusColumnIndex.toString());
+
+  if (activeColumnIndex == statusColumnIndex) {
     var rowIndex = spreadsheet.getCurrentCell().getRowIndex();
     console.info("current row index: " + rowIndex.toString());
     setRowBackgroundByStatus(rowIndex);
