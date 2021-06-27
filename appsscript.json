@@ -1,0 +1,28 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "sheets": {
+    "macros": [{
+      "menuName": "activateRow",
+      "functionName": "activateRow"
+    }, {
+      "menuName": "無題のマクロ",
+      "functionName": "myFunction"
+    }, {
+      "menuName": "setRowBackgroundByStatus",
+      "functionName": "setRowBackgroundByStatus",
+      "defaultShortcut": "Ctrl+Alt+Shift+1"
+    }, {
+      "menuName": "new_row",
+      "functionName": "new_row",
+      "defaultShortcut": "Ctrl+Alt+Shift+2"
+    }, {
+      "menuName": "addNewItem",
+      "functionName": "addNewItem",
+      "defaultShortcut": "Ctrl+Alt+Shift+2"
+    }]
+  }
+}
