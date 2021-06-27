@@ -1,2 +1,2 @@
-# todolist-on-google-spreadsheet
-This is a todo-list on Google SpreadSheet.
+# What's this?
+This is a simple todo list on Google SpreadSheet.
